@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- fonts  -->
+  <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro|Anton|Asul|Mina|Nanum+Myeongjo|Russo+One" rel="stylesheet">
+  <!--Import bootstrap css-->
+  <link type="text/css" rel="stylesheet" href="vendors/bootstrap/css/bootstrap.css" />
+  <!-- main.css-->
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <!--Enlazar la libreria de reac-->
+     <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+     <!--Enlazar el dom virtual -->
+     <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+     <!--Babel para jsx-->
+     <script crossorigin src = "https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+  <title></title>
+ </head>
+ <body>
+<div id="random-box" class="">
+
+</div>
+<script type="text/babel">
+    class Box extends React.Component {
+     render(){
+         function selectColor() {
+             const items = ['salmon','lightsteelblue','pink','mediumaquamarine', 'royalblue', 'yellowgreen'];
+             let co = items[Math.floor(Math.random()*items.length)];
+             const fontItems = ['Asul', 'Anonymous Pro', 'Mina','Anton', 'Nanum Myeongjo','Russo One']
+             let fo =  fontItems[Math.floor(Math.random()*fontItems.length)];
+             let color = {backgroundColor: co, fontFamily: fo }
+             // console.log(co);
+             return color;
+           };
+         return (
+             <div style={selectColor()} className ="card display">
+               REAct
+            </div>
+         );
+        }
+      }
+  ReactDOM.render(<Box/>, document.getElementById('random-box'));
+
+</script>
+
+  <script type="text/javascript" src="vendors/js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="vendors/bootstrap/js/bootstrap.min.js"></script>
+  <script src="js/app.js"></script>
+ </body>
+</html>
